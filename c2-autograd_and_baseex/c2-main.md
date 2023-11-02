@@ -69,3 +69,4 @@ print(b.grad)     # b 的导数是 1
 该机制即为 pytorch 的自动求导机制  
 
 ## pytorch 实践项目
+这里主要将使用 pytorch 实现一个简单的模型训练，详细可查看文档: [c2-bostan](/c2-autograd_and_baseex/c2-bostan.md)  
