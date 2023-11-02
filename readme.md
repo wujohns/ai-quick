@@ -12,7 +12,7 @@ c4-hugging_face_lora - 以 gpt2 为案例的 lora 训练
 c5-gradio - 简单介绍和展示 gradio 的相关功能，以及其在业务工程开发中的定位  
 
 ## 当前进度
-c1 备课完毕
+c1 备课完毕  
 c2 备课中
 
 ## 后续计划

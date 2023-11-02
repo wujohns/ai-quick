@@ -23,13 +23,49 @@
 ![train.png](/c2-autograd_and_baseex/train.png)  
 
 ## 张量(Tensor)
-张量是一种多为数组，是深度学习中最基本的数据结构之一，其主要有以下的作用:  
-1. 用于 描述样本数据 与 模型参数    
+张量是一种多维数组，是深度学习中最基本的数据结构之一，其主要有以下的作用:  
+1. 用于 `描述样本数据` 与 `作为模型参数`  
 1. 在框架中封装了针对该类型的方法便于使用 GPU 设备处理处理  
-1. 便于计算图的追溯，以实现自动微分从计算对应参数的梯度(求导)  
+1. 便于计算图的追溯，以实现自动微分从计算对应参数的梯度(求导得到的导数)  
 
-## pytorch 反向传播基础演示
+备注:   
+1. 计算图的特性主要便于自动求导，以实现训练过程中的参数的梯度计算，在本章节后续的部分做详细介绍  
 
+## pytorch 自动求导演示
+这里用一个简单的案例展示 pytorch 中的自动求导特性，代码如下:  
+```py
+import torch
+
+w = torch.rand(2, 2, requires_grad=True)
+x = torch.rand(2, 2, requires_grad=True)
+b = torch.rand(2, 2, requires_grad=True)
+
+out = w * x + b
+
+# 假设这是一个损失函数
+# 实际业务中 loss 一般为上述计算的 out 与实际的 out 的差值
+loss = out.sum()
+loss.backward()
+
+print(out)
+print(loss)
+print('-------------')
+
+print(w)
+print(x)
+print(b)
+print('-------------')
+print(w.grad)     # w 的导数是 x
+print(x.grad)     # x 的导数是 w
+print(b.grad)     # b 的导数是 1
+```
+
+通过运行这里案例，我们可以了解 pytorch 内置的自动求导特性:  
+1. w,x,b 均为张量类型(tensor)，其计算过程均会被追踪与记录，即所谓的计算图  
+1. 在执行 loss 计算后，并执行 loss.backward() 时，会依据上述的计算图做求导运算，获得的值则会被记录到对应的张量上(该值即为本次计算中对应张量的梯度)  
+1. 计算该梯度的方法为自动微分方法配合求导的链式法则获得  
+
+至此通过上述的机制，我们就获取了调整一个模型参数的所依赖的信息了(即模型参数梯度)  
+该机制即为 pytorch 的自动求导机制  
 
 ## pytorch 实践项目
-
