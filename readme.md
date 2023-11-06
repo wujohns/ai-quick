@@ -11,13 +11,14 @@ c3-hugging_face_base - hugging face 平台的介绍与基础使用，并包含�
 c4-hugging_face_lora - 以 gpt2 为案例的 lora 训练  
 c5-gradio - 简单介绍和展示 gradio 的相关功能，以及其在业务工程开发中的定位  
 
+## 课程详细导航
+TODO 需要在本次处理中完成
+
 ## 当前进度
 c1 授课完成  
 c2 备课完毕  
-c3 备课完毕
-c4 备课中 
+c3 备课完毕  
+c4 备课中 - 补充 lora 说明以及相关图解
 
 ## 后续计划
 ai 绘画，语音合成，歌曲合成，lipsync 等常见场景的扩展课程  
-
-
