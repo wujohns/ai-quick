@@ -4,3 +4,5 @@ transformers==4.35.0
 # c4 课程需要用到的包
 datasets==2.14.6
 peft==0.5.0
+
+# c5 课程需要用到的包
