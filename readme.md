@@ -39,7 +39,7 @@ c5-gradio - 简单介绍和展示 gradio 的相关功能，以及其在业务工
 1. 使用训练后端的 lora 运行模型案例 - [c4-hugging_face_lora/gpt2-run.ipynb](/c4-hugging_face_lora/gpt2-run.ipynb)  
 
 ### c5-gradio
-
+1. gradio 的介绍与使用 - [c5-gradio/c5.md](/c5-gradio/c5.md)  
 
 ## 后续计划
 ai 绘画，语音合成，歌曲合成，lipsync 等常见场景的扩展课程  
